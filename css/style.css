@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* About Page */
+
+/* =========== MOBILE ========== */
+
+nav {
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    font-family: "quasimoda", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.about {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding: .5rem;
+}
+
+.photography {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding: .5rem;
+}
+
+.gdesign {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding: .5rem;
+}
+
+.contact {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding: .5rem;
+}
+
+nav :hover {
+    transition: all .4s;
+    color: black;
+    background-color: whitesmoke;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-area: header;
+    place-items: center;
+    height: 40%;
+    padding-bottom: 50px;
+}
+
+.bwvideo {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.name {
+    font-family: "quasimoda", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 6vw;
+}
+
+.banner {
+    text-align: center;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 2;
+}
+
+.main h2 {
+    font-family: "quasimoda", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 4vw;
+    padding-bottom: 1rem;
+}
+
+.main p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    line-height: 2rem;
+}
+
+figure {
+    max-width: 100%;
+    height: auto;
+}
+
+.headshot {
+    border-radius: 50%;
+    filter: grayscale(100%);
+    max-width: 100%;
+    height: auto;
+    padding: 5%;
+}
+
+.headshotcontainer {
+    grid-area: headshot;
+    place-items: center;
+}
+
+aside {
+    grid-area: aside;
+    padding: 5%;
+    place-items: center;
+    max-width: 100%;
+}
+
+.main {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "headshot"
+        "aside"
+    ;
+}
+
+/* =========TABLET========= */
+
+@media screen and (min-width: 600px) {
+    .main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "headshot aside";
+    }
+}
+
+/* ==========DESKTOP adopts from tablet no changes wanted========= */
+
+@media screen and (min-width:980px) {}
+
+
+/* Photography page */
+
+/* ==============MOBILE============= */
+
+.photographypics {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    place-items: center;
+    padding: 5%;
+    min-width: 100%;
+}
+
+.photos img {
+    filter: grayscale(100%);
+    transition: filter .2s ease;
+    width: 100%;
+}
+
+.photos img:hover {
+    filter: grayscale(0%);
+}
+
+/* ==============TABLET============ */
+
+@media screen and (min-width: 600px) {
+    .photographypics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+}
+
+/* =============DESKTOP============ */
+
+@media screen and (min-width:980px) {
+    .photographypics {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+}
+
+/* Graphic Design Page */
+
+/* ===============MOBILE============== */
+
+h2 {
+    font-family: "quasimoda", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 4vw;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    line-height: 200%;
+}
+
+.main2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2%;
+}
+
+.indivprojects {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    width: 100%;
+    grid-gap: 25px
+}
+
+.indivprojects img {
+    animation: fade-in 10s forwards ease-in;
+}
+
+@keyframes fade-in {
+    25% {
+        opacity: 0;
+        filter: blur (100px)
+    }
+
+    50% {
+        opacity: 0.5;
+        filter: blur (70px)
+    }
+
+    75% {
+        opacity: 0.75;
+        filter: blur (30px)
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur (0px)
+    }
+
+}
+
+/* ==============TABLET=============== */
+
+@media screen and (min-width: 600px) {
+    .indivprojects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+}
+
+/* ===============DESKTOP============== */
+
+@media screen and (min-width:980px) {
+    .indivprojects {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        place-items: start;
+        padding-top: 8%;
+    }
+
+}
+
+/* Contact Page */
+
+/* ===============SAME ACROSS DEVICES============= */
+
+.interested {
+    font-size: auto;
+    padding: 20px;
+}
+
+#contactform {
+    width: 100%;
+	height: 100vh;
+    padding: 10px;
+	display:flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+form {
+	width:40%;
+    max-width: 500px;
+    min-width: 380px;
+	background-color: lightgray;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+input[type=text], input[type=email] {
+    width: 100%;
+    padding: 12px 0px 4px 4px;
+    margin: 6px 0 20px;
+    display: block;
+	border-radius: 4px;
+    font-size:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#000;
+    background: whitesmoke;
+    transition:all .3s;
+}
+
+input[type=text]:focus, input[type=email]:focus {
+    width: 100%;
+    color:white;
+    background: black;
+	outline: none;
+}
+
+input[type=submit] {
+    display: inline-block;
+    width: 20%;
+    min-width: 100px;
+    background-color:black;
+    color: white;
+    padding: 10px 20px;
+    margin: 14px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition:all .3s;   
+}
+
+input[type=submit]:hover {
+    background-color:#333;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+	margin: 6px 0 20px;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    font-size:18px;
+    resize: none;
+    color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	transition:all .3s; 
+}
+
+textarea:focus {
+    background: black;
+    color:#fff;
+	outline: none;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
